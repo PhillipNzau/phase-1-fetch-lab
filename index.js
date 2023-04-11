@@ -1,5 +1,14 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
+  return fetch('https://anapioficeandfire.com/api/books', {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+  })
+  .then((response) => response.json())
+  .then((books)=> renderBooks(books) )
   
 }
 
